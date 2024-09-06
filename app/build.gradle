@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+
+}
+
+android {
+    namespace 'base.ryuunta.base_mvvm'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "base.ryuunta.base_mvvm"
+        minSdk 29
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        buildConfig true
+//        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enable = true
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    implementation libs.androidx.databinding.runtime
+    implementation libs.androidx.swiperefreshlayout
+    implementation libs.androidx.viewpager2
+
+    // Room
+    implementation libs.androidx.room.runtime
+    kapt libs.androidx.room.compiler
+    // Kotlin Extensions and Coroutines support for Room
+    implementation libs.room.ktx
+
+    //live data
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+
+    implementation libs.androidx.multidex
+    implementation libs.androidx.legacy.support.v4
+
+    implementation 'javax.inject:javax.inject:1'
+    //Dagger - Hilt
+//    implementation "com.google.dagger:hilt-android:2.42"
+//    kapt "com.google.dagger:hilt-android-compiler:2.42"
+//    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    //rx
+    implementation libs.rxjava
+    implementation libs.rxkotlin
+    implementation libs.rxandroid
+
+    //ok http
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+    //retrofit
+    implementation libs.retrofit
+    implementation libs.converter.gson
+
+    //glide
+    implementation libs.glide
+    annotationProcessor libs.compiler
+
+    //coroutine
+    implementation libs.kotlinx.coroutines.android
+    implementation libs.kotlinx.coroutines.core
+
+    //data store
+    implementation libs.androidx.datastore.preferences
+
+    //Permission
+    implementation libs.dexter
+    //gson
+    implementation libs.gson
+
+    //lottie
+    implementation libs.lottie
+
+    //wifi utils
+    implementation(libs.wifiutils)
+}

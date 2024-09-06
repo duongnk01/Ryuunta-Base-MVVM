@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ryuunta-Base-MVVM</string>
+
+    <string name="loading">Đang tải</string>
+    <string name="wait_a_few">Chờ tí…</string>
+    <string name="cancel">Huỷ</string>
+    <string name="ok">OK</string>
+</resources>
